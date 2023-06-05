@@ -1,0 +1,10 @@
+sgu\dao\Conexion.class
+sgu\controller\MenuController.class
+sgu\view\Menu$1.class
+sgu\controller\Main.class
+sgu\dao\AlumnoDAO.class
+sgu\view\PanelAlumnos.class
+sgu\controller\AlumnosController.class
+sgu\view\Menu.class
+sgu\model\Alumno.class
+sgu\view\PanelAlumnos$1.class
