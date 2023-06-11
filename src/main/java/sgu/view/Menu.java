@@ -1,25 +1,7 @@
-/*
- * Click nbfs://nbhost            @Override
-            public void paintIcon(Component c, Graphics g, int x, int y) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
 
-            @Override
-            public int getIconWidth() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-
-            @Override
-            public int getIconHeight() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-            }
-        }SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package sgu.view;
 
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import javax.swing.plaf.basic.BasicButtonUI;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -29,11 +11,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {  
         initComponents();
         
-        this.setResizable(false); 
-        
-         
-         
-    
+        this.setResizable(false);
     }
 
     
@@ -51,9 +29,10 @@ public class Menu extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        btnCur = new javax.swing.JButton();
+        btnProf = new javax.swing.JButton();
         btnAlu = new javax.swing.JButton();
         btnMat = new javax.swing.JButton();
+        btnCur = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -93,15 +72,15 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnCur.setBackground(new java.awt.Color(30, 30, 30));
-        btnCur.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        btnCur.setForeground(new java.awt.Color(153, 153, 153));
-        btnCur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-classroom-30.png"))); // NOI18N
-        btnCur.setText("Cursados");
-        btnCur.setBorder(null);
-        btnCur.setBorderPainted(false);
-        btnCur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCur.setFocusable(false);
+        btnProf.setBackground(new java.awt.Color(30, 30, 30));
+        btnProf.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnProf.setForeground(new java.awt.Color(153, 153, 153));
+        btnProf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-school-director-30 (1).png"))); // NOI18N
+        btnProf.setText("Profesores");
+        btnProf.setBorder(null);
+        btnProf.setBorderPainted(false);
+        btnProf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnProf.setFocusable(false);
 
         btnAlu.setBackground(new java.awt.Color(30, 30, 30));
         btnAlu.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
@@ -123,13 +102,24 @@ public class Menu extends javax.swing.JFrame {
         btnMat.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnMat.setFocusable(false);
 
+        btnCur.setBackground(new java.awt.Color(30, 30, 30));
+        btnCur.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        btnCur.setForeground(new java.awt.Color(153, 153, 153));
+        btnCur.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons8-classroom-30.png"))); // NOI18N
+        btnCur.setText("Cursados");
+        btnCur.setBorder(null);
+        btnCur.setBorderPainted(false);
+        btnCur.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCur.setFocusable(false);
+
         javax.swing.GroupLayout navBarLayout = new javax.swing.GroupLayout(navBar);
         navBar.setLayout(navBarLayout);
         navBarLayout.setHorizontalGroup(
             navBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnAlu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnMat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnProf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(btnCur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         navBarLayout.setVerticalGroup(
@@ -142,7 +132,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(btnMat, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCur, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnProf, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jSplitPane1.setLeftComponent(navBar);
@@ -155,11 +147,11 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -186,6 +178,7 @@ public class Menu extends javax.swing.JFrame {
     public javax.swing.JButton btnAlu;
     public javax.swing.JButton btnCur;
     public javax.swing.JButton btnMat;
+    public javax.swing.JButton btnProf;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel5;

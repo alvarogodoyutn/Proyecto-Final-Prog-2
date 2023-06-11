@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import sgu.model.Alumno;
+import sgu.model.Cursado;
+import sgu.model.Materia;
 
 public class AlumnoDAO extends Conexion {
 
@@ -18,8 +20,8 @@ public class AlumnoDAO extends Conexion {
     private final String SQL_SELECT = "SELECT * FROM alumno";
     private final String SQL_DELETE = "DELETE FROM alumno WHERE alu_dni=?";
     private final String SQL_UPDATE = "UPDATE alumno SET alu_nombre=?,alu_apellido=?,alu_fec_nac=?, alu_domicilio=?,alu_telefono=? WHERE alu_dni=?";
-    private final String SQL_UPDATE_CARRERA = "UPDATE alumno SET alu_insc_cod=? WHERE alu_dni=?";
     private final String SQL_FIND = "SELECT * FROM alumno WHERE alu_dni=?";
+    private final String SQL_FINDALL = "SELECT *  FROM cursado WHERE cur_alu_dni=?";
 
     public boolean create(Alumno alumno) {
         PreparedStatement ps = null;
@@ -38,7 +40,7 @@ public class AlumnoDAO extends Conexion {
 
             ps.executeUpdate();
 
-            System.out.println("Agregado Con Exito");
+            System.out.println("Alumno añadido con exito");
 
             return true;
         } catch (SQLException e) {
@@ -72,7 +74,6 @@ public class AlumnoDAO extends Conexion {
                 alumno.setFechaNacimiento(rs.getDate(4));
                 alumno.setDomicilio(rs.getString(5));
                 alumno.setTelefono(rs.getString(6));
-                alumno.setCodigoInscripcion(4);
 
                 listaAlumnos.add(alumno);
 
@@ -105,33 +106,6 @@ public class AlumnoDAO extends Conexion {
             ps.setString(5, alumno.getTelefono());
 
             ps.setInt(6, alumno.getDni());
-            ps.executeUpdate();
-            System.out.println("Actualizado Con Exito");
-            return true;
-
-        } catch (SQLException e) {
-            System.out.println("Error al Actualizar : " + e);
-            return false;
-
-        } finally {
-
-            Conexion.close(conn);
-            Conexion.close(ps);
-
-        }
-    }
-
-    public boolean updateCarrera(Alumno alumno) {
-        PreparedStatement ps = null;
-        Connection conn = null;
-
-        try {
-            conn = Conexion.getConnection();
-            ps = conn.prepareStatement(SQL_UPDATE_CARRERA);
-
-            ps.setInt(1, alumno.getCodigoInscripcion());
-
-            ps.setInt(2, alumno.getDni());
             ps.executeUpdate();
             System.out.println("Actualizado Con Exito");
             return true;
@@ -190,7 +164,6 @@ public class AlumnoDAO extends Conexion {
                 alumno.setFechaNacimiento(rs.getDate(4));
                 alumno.setDomicilio(rs.getString(5));
                 alumno.setTelefono(rs.getString(6));
-                alumno.setCodigoInscripcion(rs.getInt(7));
             }
 
         } catch (SQLException e) {
@@ -233,6 +206,42 @@ public class AlumnoDAO extends Conexion {
         }
 
         return false;
+    }
+    
+    public List<Cursado> findAll(int dniAlumno){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Cursado cursado;
+        List<Cursado> listaCursados = new ArrayList<>();
+
+        try {
+            conn = Conexion.getConnection();
+            ps = getConnection().prepareStatement(SQL_FINDALL);
+            ps.setInt(1, dniAlumno);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                cursado = new Cursado();
+
+                cursado.setAlumno(new Alumno(dniAlumno));
+                cursado.setMateria(new Materia(rs.getInt(2)));
+                cursado.setNota(rs.getDouble(3));
+
+                listaCursados.add(cursado);
+
+            }
+
+        } catch (SQLException e) {
+
+            System.out.println(e);
+
+        } finally {
+            Conexion.close(conn);
+            Conexion.close(ps);
+            Conexion.close(rs);
+        }
+        return listaCursados;
     }
 
 }

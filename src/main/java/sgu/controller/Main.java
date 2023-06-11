@@ -4,27 +4,19 @@
  */
 package sgu.controller;
 
-import com.formdev.flatlaf.themes.FlatMacDarkLaf;
-import javax.swing.UIManager;
 
-/**
- *
- * @author MI EQUIPO
- */
+import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+
 public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(new FlatMacDarkLaf());
-        } catch (Exception ex) {
-            System.err.println("Failed to initialize LaF");
-        }
         
-       MenuController menu = new MenuController();
-       menu.panelAlumno();
+        FlatMacDarkLaf.setup();
+        
+         MenuController menu = new MenuController();
     }
     
 }

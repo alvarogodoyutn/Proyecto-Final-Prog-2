@@ -1,8 +1,22 @@
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\controller\MenuController.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\controller\Main.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\model\Alumno.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\dao\Conexion.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\controller\AlumnosController.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\view\Menu.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\view\PanelAlumnos.java
-D:\Facultad\Programacion 2\Proyecto Final\gesionuniversitaria\src\main\java\sgu\dao\AlumnoDAO.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\AgregarAlumno.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\PanelAlumnos.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\Main.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\dao\MateriaDAO.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\model\Profesor.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\PanelCursados.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\ProfesoresController.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\PanelProfesores.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\MenuController.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\MateriasController.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\model\Cursado.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\dao\AlumnoDAO.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\CursadosController.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\model\Alumno.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\dao\Conexion.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\Menu.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\controller\AlumnosController.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\model\Materia.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\PanelNotas.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\dao\CursadoDAO.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\dao\ProfesorDAO.java
+D:\Facultad\Programacion2\ProyectoFinal\gesionuniversitaria\src\main\java\sgu\view\PanelMaterias.java

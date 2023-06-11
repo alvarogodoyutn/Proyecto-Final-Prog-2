@@ -4,24 +4,82 @@
  */
 package sgu.view;
 
+import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
-import java.awt.Color;
-import javax.swing.ListSelectionModel;
-
-
+/**
+ *
+ * @author MI EQUIPO
+ */
 public class PanelAlumnos extends javax.swing.JPanel {
 
     /**
      * Creates new form PanelAlumnos
      */
     public PanelAlumnos() {
-        
         initComponents();
-        
-        tableAlumnos.getTableHeader().setBackground(new Color(33,33,33));
-        tableAlumnos.getTableHeader().setForeground(new Color(153,153,153));
-        tableAlumnos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     }
+
+    public JButton getBtnAdd() {
+        return btnAdd;
+    }
+
+    public void setBtnAdd(JButton btnAdd) {
+        this.btnAdd = btnAdd;
+    }
+
+    public JButton getBtnDel() {
+        return btnDel;
+    }
+
+    public void setBtnDel(JButton btnDel) {
+        this.btnDel = btnDel;
+    }
+
+    public JButton getBtnEdit() {
+        return btnEdit;
+    }
+
+    public void setBtnEdit(JButton btnEdit) {
+        this.btnEdit = btnEdit;
+    }
+
+    public JButton getBtnGrades() {
+        return btnGrades;
+    }
+
+    public void setBtnGrades(JButton btnGrades) {
+        this.btnGrades = btnGrades;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JTable getTableAlumnos() {
+        return tableAlumnos;
+    }
+
+    public void setTableAlumnos(JTable tableAlumnos) {
+        this.tableAlumnos = tableAlumnos;
+    }
+
+    public JPanel getjPanel1() {
+        return jPanel1;
+    }
+
+    public void setjPanel1(JPanel jPanel1) {
+        this.jPanel1 = jPanel1;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,22 +94,17 @@ public class PanelAlumnos extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tableAlumnos = new javax.swing.JTable();
         btnAdd = new javax.swing.JButton();
-        btnEdit = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
         btnGrades = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
-
-        setBackground(new java.awt.Color(33, 33, 33));
+        btnEdit = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(33, 33, 33));
 
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        jScrollPane1.setHorizontalScrollBar(null);
-        jScrollPane1.setRequestFocusEnabled(false);
+        jScrollPane1.setBackground(new java.awt.Color(33, 33, 33));
+        jScrollPane1.setForeground(new java.awt.Color(153, 153, 153));
+        jScrollPane1.setFocusable(false);
+        jScrollPane1.setOpaque(false);
 
-        tableAlumnos.setBackground(new java.awt.Color(33, 33, 33));
-        tableAlumnos.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        tableAlumnos.setForeground(new java.awt.Color(153, 153, 153));
         tableAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -70,81 +123,73 @@ public class PanelAlumnos extends javax.swing.JPanel {
         });
         tableAlumnos.setFocusable(false);
         tableAlumnos.setRowHeight(30);
-        tableAlumnos.setSelectionBackground(new java.awt.Color(102, 102, 102));
-        tableAlumnos.getTableHeader().setResizingAllowed(false);
-        tableAlumnos.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tableAlumnos);
 
-        btnAdd.setBackground(new java.awt.Color(45, 140, 69));
+        btnAdd.setBackground(new java.awt.Color(70, 155, 70));
         btnAdd.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(200, 200, 200));
         btnAdd.setText("Agregar");
-        btnAdd.setActionCommand("");
-        btnAdd.setBorderPainted(false);
         btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdd.setFocusable(false);
 
-        btnEdit.setBackground(new java.awt.Color(70, 65, 60));
-        btnEdit.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        btnEdit.setText("Editar");
-        btnEdit.setActionCommand("");
-        btnEdit.setBorderPainted(false);
-        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDel.setBackground(new java.awt.Color(155, 70, 70));
+        btnDel.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        btnDel.setForeground(new java.awt.Color(200, 200, 200));
+        btnDel.setText("Eliminar");
+        btnDel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDel.setFocusable(false);
 
-        btnGrades.setBackground(new java.awt.Color(70, 65, 60));
+        btnGrades.setBackground(new java.awt.Color(75, 65, 60));
         btnGrades.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        btnGrades.setForeground(new java.awt.Color(200, 200, 200));
         btnGrades.setText("Ver notas");
-        btnGrades.setActionCommand("");
-        btnGrades.setBorderPainted(false);
         btnGrades.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGrades.setFocusable(false);
 
-        btnDelete.setBackground(new java.awt.Color(220, 40, 40));
-        btnDelete.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
-        btnDelete.setText("Eliminar");
-        btnDelete.setActionCommand("");
-        btnDelete.setBorderPainted(false);
-        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEdit.setBackground(new java.awt.Color(75, 65, 60));
+        btnEdit.setFont(new java.awt.Font("Segoe UI Semibold", 1, 12)); // NOI18N
+        btnEdit.setForeground(new java.awt.Color(200, 200, 200));
+        btnEdit.setText("Editar");
+        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEdit.setFocusable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 638, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnGrades, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 616, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(btnAdd)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 353, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnDelete)
+                    .addComponent(btnDel)
                     .addComponent(btnEdit)
                     .addComponent(btnGrades))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(66, 66, 66))
         );
-
-        jScrollPane1.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -154,12 +199,12 @@ public class PanelAlumnos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAdd;
-    public javax.swing.JButton btnDelete;
-    public javax.swing.JButton btnEdit;
-    public javax.swing.JButton btnGrades;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable tableAlumnos;
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnGrades;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tableAlumnos;
     // End of variables declaration//GEN-END:variables
 }

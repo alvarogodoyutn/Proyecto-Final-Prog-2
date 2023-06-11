@@ -26,13 +26,7 @@ public class Conexion {
         try {
             Class.forName(JDBC_DRIVER);
             conexion = DriverManager.getConnection(URL + DATA_BASE + SSL, USER_NAME, PASSWORD);
-            if (conexion != null) {
-                System.out.println("Conexión Exitosa!");
-                System.out.println("Conectado a : " + URL + DATA_BASE + SSL);
-            }
-
         } catch (ClassNotFoundException | SQLException e) {
-            System.err.println("Error De Conexión! :  " + e);
             JOptionPane.showMessageDialog(null, "Error De Conexión A Base De Datos!\n " + e);
             System.exit(0);
 

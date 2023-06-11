@@ -16,8 +16,14 @@ public class Alumno {
     private Date fechaNacimiento;
     private String domicilio;
     private String telefono;
-    private int codigoInscripcion;
     private AlumnoDAO alumnoDAO = new AlumnoDAO();
+
+    public Alumno() {
+    }
+
+    public Alumno(int dni) {
+        this.dni = dni;
+    }
 
     public int getDni() {
         return dni;
@@ -66,46 +72,38 @@ public class Alumno {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-
-    public int getCodigoInscripcion() {
-        return codigoInscripcion;
-    }
-
-    public void setCodigoInscripcion(int codigoInscripcion) {
-        this.codigoInscripcion = codigoInscripcion;
-    }
     
     
-    //CRUD
-    //CREATE
-    public boolean createAlumno(Alumno alumno) {
+    public boolean create(Alumno alumno) {
         return alumnoDAO.create(alumno);
     }
 
-    //READ
-    public List<Alumno> readlumnos() {
+    public List<Alumno> read() {
         return alumnoDAO.read();
     }
 
-    //UPDATE
-    public boolean updateAlumno(Alumno alumno) {
+    public boolean update(Alumno alumno) {
         return alumnoDAO.update(alumno);
     }
 
-    //DELETE
-    public boolean deleteAlumno(int idAlumno) {
+    public boolean delete(int idAlumno) {
+        List<Cursado> cursados = findGrades(idAlumno);
+        
+        for (Cursado cur: cursados){
+            cur.delete(idAlumno);
+        }
         return alumnoDAO.delete(idAlumno);
     }
 
-    public Alumno findAlumno(int dniAlumno) {
+    public Alumno find(int dniAlumno) {
         return alumnoDAO.find(dniAlumno);
     }
 
-    public boolean updateCarreraAlumno(Alumno alumno) {
-        return alumnoDAO.updateCarrera(alumno);
-    }
-
-    public boolean alumnoExist(int dniAlumno) {
+    public boolean exist(int dniAlumno) {
         return alumnoDAO.exist(dniAlumno);
+    }
+    
+    public List<Cursado> findGrades(int dniAlumno){
+        return alumnoDAO.findAll(dniAlumno);
     }
 }

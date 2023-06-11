@@ -11,42 +11,37 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
-import javax.swing.SwingUtilities;
 import sgu.view.Menu;
-import sgu.view.PanelAlumnos;
 
 
-public class MenuController implements  MouseListener, ActionListener {
+public class MenuController implements  MouseListener, ActionListener{
     private Menu view = new Menu();
     private CardLayout cardLayout = (CardLayout) this.view.mainPanel.getLayout();
     
-     //Paneles
-    private PanelAlumnos panelAlumnos = new PanelAlumnos();
+    private AlumnosController alumnosController;
+    private MateriasController materiasController;
+    private CursadosController cursadosController;
+    private ProfesoresController profesoresController;
     
-    //Controladores
-    private AlumnosController alumnosController = new AlumnosController(panelAlumnos, view);
 
     public MenuController() {
+        
+        alumnosController = new AlumnosController(this.view, this);
 
         this.view.setVisible(true);
 
         this.view.btnAlu.addMouseListener(this);
         this.view.btnMat.addMouseListener(this);
         this.view.btnCur.addMouseListener(this);
+        this.view.btnProf.addMouseListener(this);
         
         this.view.btnAlu.addActionListener(this);
         this.view.btnMat.addActionListener(this);
-        this.view.btnCur.addActionListener(this);              
+        this.view.btnCur.addActionListener(this);
+        this.view.btnProf.addActionListener(this);
+        
     }
     
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource().equals(this.view.btnAlu)){
-            panelAlumno();
-            alumnosController.clearTable();
-            alumnosController.listarAlumnos(this.panelAlumnos.tableAlumnos);
-        }
-    }
 
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -71,6 +66,9 @@ public class MenuController implements  MouseListener, ActionListener {
         } else if (e.getSource().equals(this.view.btnCur)) {
             this.view.btnCur.setForeground(new Color(255, 144, 0));
             this.view.btnCur.setIcon(new ImageIcon(getClass().getResource("/icons8-classroom-30 (1).png")));
+        } else if (e.getSource().equals(this.view.btnProf)) {
+            this.view.btnProf.setForeground(new Color(255, 144, 0));
+            this.view.btnProf.setIcon(new ImageIcon(getClass().getResource("/icons8-school-director-30.png")));
         }
     }
 
@@ -85,20 +83,34 @@ public class MenuController implements  MouseListener, ActionListener {
         } else if (e.getSource().equals(this.view.btnCur)) {
             this.view.btnCur.setForeground(new Color(153, 153, 153));
             this.view.btnCur.setIcon(new ImageIcon(getClass().getResource("/icons8-classroom-30.png")));
+        } else if (e.getSource().equals(this.view.btnProf)) {
+            this.view.btnProf.setForeground(new Color(153, 153, 153));
+            this.view.btnProf.setIcon(new ImageIcon(getClass().getResource("/icons8-school-director-30 (1).png")));
         }
     }
     
-    public void panelAlumno(){
-        this.view.mainPanel.add(panelAlumnos, "panelAlumnos");
-        cardLayout.show(this.view.mainPanel, "panelAlumnos");
-        SwingUtilities.updateComponentTreeUI(this.view);
-        this.view.repaint();
-        alumnosController.listarAlumnos(panelAlumnos.tableAlumnos);
-    }
-
     public CardLayout getCardLayout() {
         return cardLayout;
     }
-    
-    
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(this.view.btnAlu)){
+            alumnosController = new AlumnosController(this.view, this);
+            alumnosController.clear();
+            alumnosController.lista();
+        } else if (e.getSource().equals(this.view.btnMat)){
+            materiasController = new MateriasController(this.view, this);
+            materiasController.clear();
+            materiasController.lista();
+        } else if (e.getSource().equals(this.view.btnCur)){
+            cursadosController = new CursadosController(this.view, this);
+            cursadosController.clear();
+            cursadosController.lista();
+        } else if (e.getSource().equals(this.view.btnProf)){
+            profesoresController = new ProfesoresController(this.view, this);
+            profesoresController.clear();
+            profesoresController.lista();
+        }      
+    }
 }
